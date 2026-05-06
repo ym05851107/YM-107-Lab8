@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美丽烟台理工校园 | 杨明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "微软雅黑", sans-serif;
+            background-color: #e6f7ff;
+            padding-bottom: 80px;
+        }
+        h1 {
+            text-align: center;
+            color: #ff0000;
+            margin: 40px 0 60px;
+            letter-spacing: 2px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            transition: transform 0.4s ease;
+            font-size: 22px;
+        }
+        h2:hover {
+            transform: rotate(45deg);
+        }
+
+        .box {
+            width: 275px;
+            height: 175px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            background: #fff;
+            position: relative;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+        .img-title {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.5);
+            color: #333;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+
+        /* 第一部分白色背景 增加高度 */
+        .theme1 {
+            width: 600px;
+            margin: 0 auto 60px;
+            background-color: #ffffff;
+            padding: 40px 30px 120px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .theme2, .theme3 {
+            width: 880px;
+            margin: 0 auto 60px;
+            background-color: #ffffff;
+            padding: 30px 60px 30px 30px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        .theme1 h2 {color: #ff00b7;}
+        .theme2 h2 {color: #9900ff;}
+        .theme3 h2 {color: #00ff2a;}
+
+        /* 3D 位置保持不变 */
+        .carousel-3d {
+            position: relative;
+            width: 275px;
+            height: 175px;
+            margin: 120px auto 0;
+            perspective: 1200px;
+        }
+        .carousel-box {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotate3d 12s linear infinite;
+        }
+        .carousel-box .box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            backface-visibility: hidden;
+        }
+
+        .carousel-box .box:nth-child(1) { transform: rotateX(0deg)   translateZ(160px); }
+        .carousel-box .box:nth-child(2) { transform: rotateX(60deg)  translateZ(160px); }
+        .carousel-box .box:nth-child(3) { transform: rotateX(120deg) translateZ(160px); }
+        .carousel-box .box:nth-child(4) { transform: rotateX(180deg) translateZ(160px); }
+        .carousel-box .box:nth-child(5) { transform: rotateX(240deg) translateZ(160px); }
+        .carousel-box .box:nth-child(6) { transform: rotateX(300deg) translateZ(160px); }
+
+        @keyframes rotate3d {
+            0%   { transform: rotateX(0deg); }
+            100% { transform: rotateX(360deg); }
+        }
+
+        .carousel-3d:hover .carousel-box {
+            animation-play-state: paused;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-left: -20px;
+        }
+        .grid .box:nth-child(1):hover img,
+        .grid .box:nth-child(2):hover img,
+        .grid .box:nth-child(3):hover img {
+            transform: scale(1.5);
+        }
+        .grid .box:nth-child(4):hover img,
+        .grid .box:nth-child(5):hover img,
+        .grid .box:nth-child(6):hover img {
+            transform: skewX(30deg);
+        }
+
+        footer {
+            width: 100%;
+            height: 55px;
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            line-height: 55px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>美丽烟台理工校园风光</h1>
+
+    <div class="theme1">
+        <h2>一、校园风景</h2>
+        <div class="carousel-3d">
+            <div class="carousel-box">
+                <div class="box">
+                    <img src="fj1.jpg">
+                    <div class="img-title">大海</div>
+                </div>
+                <div class="box">
+                    <img src="fj2.jpg">
+                    <div class="img-title">海鸥</div>
+                </div>
+                <div class="box">
+                    <img src="fj3.jpg">
+                    <div class="img-title">一堆箱子</div>
+                </div>
+                <div class="box">
+                    <img src="fj4.jpg">
+                    <div class="img-title">夕阳</div>
+                </div>
+                <div class="box">
+                    <img src="fj5.jpg">
+                    <div class="img-title">树</div>
+                </div>
+                <div class="box">
+                    <img src="fj6.jpg">
+                    <div class="img-title">热气球</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme2">
+        <h2>二、校园建筑</h2>
+        <div class="grid">
+            <div class="box">
+                <img src="jz1.jpg">
+                <div class="img-title">一教</div>
+            </div>
+            <div class="box">
+                <img src="jz2.jpg">
+                <div class="img-title">三教</div>
+            </div>
+            <div class="box">
+                <img src="jz3.jpg">
+                <div class="img-title">校园</div>
+            </div>
+            <div class="box">
+                <img src="jz4.jpg">
+                <div class="img-title">餐厅</div>
+            </div>
+            <div class="box">
+                <img src="jz5.jpg">
+                <div class="img-title">教学楼</div>
+            </div>
+            <div class="box">
+                <img src="jz6.jpg">
+                <div class="img-title">宿舍</div>
+            </div>
+            <div class="box">
+                <img src="jz7.jpg">
+                <div class="img-title">三教</div>
+            </div>
+            <div class="box">
+                <img src="jz8.jpg">
+                <div class="img-title">校门口</div>
+            </div>
+            <div class="box">
+                <img src="jz1.jpg"> 
+                <div class="img-title">一教</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme3">
+        <h2>三、校园美食</h2>
+        <div class="grid">
+            <div class="box">
+                <img src="ms1.jpg">
+                <div class="img-title">红烧肉盖饭</div>
+            </div>
+            <div class="box">
+                <img src="ms2.jpg">
+                <div class="img-title">徐州烧烤</div>
+            </div>
+            <div class="box">
+                <img src="ms3.jpg">
+                <div class="img-title">饭</div>
+            </div>
+            <div class="box">
+                <img src="ms4.jpg">
+                <div class="img-title">猪肘饭</div>
+            </div>
+            <div class="box">
+                <img src="ms5.jpg">
+                <div class="img-title">面</div>
+            </div>
+            <div class="box">
+                <img src="ms6.jpg">
+                <div class="img-title">汉堡</div>
+            </div>
+            <div class="box">
+                <img src="ms7.jpg">
+                <div class="img-title">肉夹馍</div>
+            </div>
+            <div class="box">
+                <img src="ms8.jpg">
+                <div class="img-title">菜</div>
+            </div>
+            <div class="box">
+                <img src="ms1.jpg"> 
+                <div class="img-title">红烧肉</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        美丽烟台理工校园页面 &copy; 杨明
+    </footer>
+</body>
+</html>
