@@ -39,6 +39,8 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.1);
             background: #fff;
             position: relative;
+            transition: transform 0.6s ease;
+            backface-visibility: hidden;
         }
         img {
             width: 100%;
@@ -61,7 +63,6 @@
             z-index: 10;
         }
 
-        /* 第一部分白色背景 增加高度 */
         .theme1 {
             width: 600px;
             margin: 0 auto 60px;
@@ -85,7 +86,6 @@
         .theme2 h2 {color: #9900ff;}
         .theme3 h2 {color: #00ff2a;}
 
-        /* 3D 位置保持不变 */
         .carousel-3d {
             position: relative;
             width: 275px;
@@ -98,7 +98,7 @@
             height: 100%;
             position: absolute;
             transform-style: preserve-3d;
-            animation: rotate3d 12s linear infinite;
+            animation: rotate3d 30s linear forwards;
         }
         .carousel-box .box {
             position: absolute;
@@ -116,11 +116,7 @@
 
         @keyframes rotate3d {
             0%   { transform: rotateX(0deg); }
-            100% { transform: rotateX(360deg); }
-        }
-
-        .carousel-3d:hover .carousel-box {
-            animation-play-state: paused;
+            100% { transform: rotateX(2160deg); }
         }
 
         .grid {
